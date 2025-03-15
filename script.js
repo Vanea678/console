@@ -68,7 +68,7 @@ sceneXbox.add(pinkLightXbox);
 // Завантаження моделі Xbox Series S
 let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
-loaderXbox.load('xbox-series-s.glb', (gltf) => {
+loaderXbox.load('xbox.glb', (gltf) => {
     modelXbox = gltf.scene;
     modelXbox.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelXbox);
