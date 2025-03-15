@@ -19,13 +19,13 @@ scenePS5.add(pinkLightPS5);
 // Завантаження моделі PS5
 let modelPS5;
 const loaderPS5 = new THREE.GLTFLoader();
-loaderPS5.load("assets\models\ps5.glb", (gltf) => {
+loaderPS5.load('ps5.glb', (gltf) => {
     modelPS5 = gltf.scene;
     modelPS5.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelPS5);
     const center = box.getCenter(new THREE.Vector3());
     modelPS5.position.sub(center);
-    modelPS5.position.x -= 2; // Переміщаємо ліворуч
+    modelPS5.position.x -= 2;
     modelPS5.traverse((child) => {
         if (child.isMesh && !child.material.map) {
             child.material = new THREE.MeshStandardMaterial({
@@ -38,7 +38,7 @@ loaderPS5.load("assets\models\ps5.glb", (gltf) => {
     scenePS5.add(modelPS5);
     console.log('Модель PS5 завантажена, розмір:', box.getSize(new THREE.Vector3()));
     const size = box.getSize(new THREE.Vector3()).length();
-    const offset = size * 1.5;
+    const offset = size * 2; // Збільшуємо відстань камери
     cameraPS5.position.set(-2, 0, offset);
     cameraPS5.lookAt(-2, 0, 0);
 }, (progress) => {
@@ -68,13 +68,13 @@ sceneXbox.add(pinkLightXbox);
 // Завантаження моделі Xbox Series S
 let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
-loaderXbox.load("assets\models\xbox.glb", (gltf) => {
+loaderXbox.load('xbox-series-s.glb', (gltf) => {
     modelXbox = gltf.scene;
     modelXbox.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelXbox);
     const center = box.getCenter(new THREE.Vector3());
     modelXbox.position.sub(center);
-    modelXbox.position.x -= 2; // Переміщаємо ліворуч
+    modelXbox.position.x -= 2;
     modelXbox.traverse((child) => {
         if (child.isMesh && !child.material.map) {
             child.material = new THREE.MeshStandardMaterial({
@@ -87,7 +87,7 @@ loaderXbox.load("assets\models\xbox.glb", (gltf) => {
     sceneXbox.add(modelXbox);
     console.log('Модель Xbox Series S завантажена, розмір:', box.getSize(new THREE.Vector3()));
     const size = box.getSize(new THREE.Vector3()).length();
-    const offset = size * 1.5;
+    const offset = size * 2;
     cameraXbox.position.set(-2, 0, offset);
     cameraXbox.lookAt(-2, 0, 0);
 }, (progress) => {
