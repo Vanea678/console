@@ -16,11 +16,6 @@ const pinkLightPS5 = new THREE.PointLight(0xFF2079, 1.5, 50);
 pinkLightPS5.position.set(5, 5, 5);
 scenePS5.add(pinkLightPS5);
 
-// Тимчасовий куб як плейсхолдер для PS5
-let modelPS5 = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshStandardMaterial({ color: 0x808080, metalness: 0.5, roughness: 0.5 })
-);
 modelPS5.scale.set(2, 2, 2); // Масштаб куба
 modelPS5.position.set(-2, 0, 0); // Позиція ліворуч
 scenePS5.add(modelPS5);
