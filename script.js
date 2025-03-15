@@ -16,8 +16,16 @@ const pinkLightPS5 = new THREE.PointLight(0xFF2079, 1.5, 50);
 pinkLightPS5.position.set(5, 5, 5);
 scenePS5.add(pinkLightPS5);
 
-// Завантаження моделі PS5
-let modelPS5;
+// Тимчасовий куб як плейсхолдер для PS5
+let modelPS5 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshStandardMaterial({ color: 0x808080, metalness: 0.5, roughness: 0.5 })
+);
+modelPS5.scale.set(2, 2, 2); // Масштаб куба
+modelPS5.position.set(-2, 0, 0); // Позиція ліворуч
+scenePS5.add(modelPS5);
+
+// Завантаження моделі PS5 (якщо файл з’явиться)
 const loaderPS5 = new THREE.GLTFLoader();
 loaderPS5.load('ps5.glb', (gltf) => {
     modelPS5 = gltf.scene;
@@ -35,10 +43,11 @@ loaderPS5.load('ps5.glb', (gltf) => {
             });
         }
     });
+    scenePS5.remove(modelPS5); // Видаляємо куб
     scenePS5.add(modelPS5);
     console.log('Модель PS5 завантажена, розмір:', box.getSize(new THREE.Vector3()));
     const size = box.getSize(new THREE.Vector3()).length();
-    const offset = size * 2; // Збільшуємо відстань камери
+    const offset = size * 2;
     cameraPS5.position.set(-2, 0, offset);
     cameraPS5.lookAt(-2, 0, 0);
 }, (progress) => {
@@ -70,7 +79,7 @@ let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
 loaderXbox.load('xbox.glb', (gltf) => {
     modelXbox = gltf.scene;
-    modelXbox.scale.set(2, 2, 2);
+    modelXbox.scale.set(3, 3, 3); // Збільшуємо масштаб
     const box = new THREE.Box3().setFromObject(modelXbox);
     const center = box.getCenter(new THREE.Vector3());
     modelXbox.position.sub(center);
