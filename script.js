@@ -79,7 +79,7 @@ let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
 loaderXbox.load('xbox.glb', (gltf) => {
     modelXbox = gltf.scene;
-    modelXbox.scale.set(9, 9, 9); // Збільшуємо масштаб
+    modelXbox.scale.set(90, 90, 90); // Збільшуємо масштаб
     const box = new THREE.Box3().setFromObject(modelXbox);
     const center = box.getCenter(new THREE.Vector3());
     modelXbox.position.sub(center);
