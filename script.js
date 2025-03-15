@@ -21,7 +21,7 @@ let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
 loaderXbox.load('xbox.glb', (gltf) => {
     modelXbox = gltf.scene;
-    modelXbox.scale.set(5, 5, 5); // Збільшуємо масштаб до 5 для видимості на половині екрану
+    modelXbox.scale.set(9, 9, 9); // Збільшуємо масштаб до 5 для видимості на половині екрану
     const box = new THREE.Box3().setFromObject(modelXbox);
     const center = box.getCenter(new THREE.Vector3());
     modelXbox.position.sub(center);
