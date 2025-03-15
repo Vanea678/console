@@ -1,3 +1,62 @@
+// Сцена для PS5
+const scenePS5 = new THREE.Scene();
+const cameraPS5 = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const rendererPS5 = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+rendererPS5.setSize(window.innerWidth * 0.5, window.innerHeight * 0.25);
+document.getElementById('scene-container-ps5').appendChild(rendererPS5.domElement);
+
+// Освітлення для PS5
+const ambientLightPS5 = new THREE.AmbientLight(0x404040, 0.8);
+scenePS5.add(ambientLightPS5);
+const blueLightPS5 = new THREE.PointLight(0x00FFEA, 1.5, 50);
+blueLightPS5.position.set(-5, 5, 5);
+scenePS5.add(blueLightPS5);
+const pinkLightPS5 = new THREE.PointLight(0xFF2079, 1.5, 50);
+pinkLightPS5.position.set(5, 5, 5);
+scenePS5.add(pinkLightPS5);
+
+// Тимчасовий куб як плейсхолдер для PS5
+let modelPS5 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshStandardMaterial({ color: 0x808080, metalness: 0.5, roughness: 0.5 })
+);
+modelPS5.scale.set(2, 2, 2); // Масштаб куба
+modelPS5.position.set(-2, 0, 0); // Позиція ліворуч
+scenePS5.add(modelPS5);
+
+// Завантаження моделі PS5 (якщо файл з’явиться)
+const loaderPS5 = new THREE.GLTFLoader();
+loaderPS5.load('ps5.glb', (gltf) => {
+    modelPS5 = gltf.scene;
+    modelPS5.scale.set(2, 2, 2);
+    const box = new THREE.Box3().setFromObject(modelPS5);
+    const center = box.getCenter(new THREE.Vector3());
+    modelPS5.position.sub(center);
+    modelPS5.position.x -= 2;
+    modelPS5.traverse((child) => {
+        if (child.isMesh && !child.material.map) {
+            child.material = new THREE.MeshStandardMaterial({
+                color: 0x808080,
+                metalness: 0.5,
+                roughness: 0.5
+            });
+        }
+    });
+    scenePS5.remove(modelPS5); // Видаляємо куб
+    scenePS5.add(modelPS5);
+    console.log('Модель PS5 завантажена, розмір:', box.getSize(new THREE.Vector3()));
+    const size = box.getSize(new THREE.Vector3()).length();
+    const offset = size * 2;
+    cameraPS5.position.set(-2, 0, offset);
+    cameraPS5.lookAt(-2, 0, 0);
+}, (progress) => {
+    console.log(`Завантаження PS5: ${(progress.loaded / progress.total * 100).toFixed(2)}%`);
+}, (error) => {
+    console.error('Помилка завантаження моделі PS5:', error);
+});
+
+
 const sceneXbox = new THREE.Scene();
 const cameraXbox = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const rendererXbox = new THREE.WebGLRenderer({ antialias: true, alpha: true });
