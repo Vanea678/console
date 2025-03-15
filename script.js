@@ -19,7 +19,7 @@ scenePS5.add(pinkLightPS5);
 // Завантаження моделі PS5
 let modelPS5;
 const loaderPS5 = new THREE.GLTFLoader();
-loaderPS5.load('assets\models\ps5.glb', (gltf) => {
+loaderPS5.load("assets\models\ps5.glb", (gltf) => {
     modelPS5 = gltf.scene;
     modelPS5.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelPS5);
@@ -68,7 +68,7 @@ sceneXbox.add(pinkLightXbox);
 // Завантаження моделі Xbox Series S
 let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
-loaderXbox.load('assets\models\xbox.glb', (gltf) => {
+loaderXbox.load("assets\models\xbox.glb", (gltf) => {
     modelXbox = gltf.scene;
     modelXbox.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelXbox);
