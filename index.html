@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Console Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Console Legacy</h1>
+        <p class="typewriter">Мир игр и многое для геймеров...</p>
+        <div class="content-wrapper">
+            <div class="left-section">
+                <div id="scene-container-ps5"></div> <!-- Сцена для PS5 -->
+                <div id="scene-container-xbox"></div> <!-- Сцена для Xbox -->
+            </div>
+            <div class="right-section">
+                <div class="specs">
+                    <h2>PlayStation 5</h2>
+                    <ul>
+                        <li><span>CPU:</span> 8-ядерний AMD Zen 2, до 3.5 ГГц</li>
+                        <li><span>GPU:</span> AMD RDNA 2, 10.28 TFLOPS, 36 CU на 2.23 ГГц</li>
+                        <li><span>Память:</span> 16 ГБ GDDR6</li>
+                        <li><span>Накопичувач:</span> 825 ГБ NVMe SSD</li>
+                        <li><span>Роздільна здатність:</span> До 8K</li>
+                        <li><span>Частота кадрів:</span> До 120 FPS</li>
+                    </ul>
+                    <h2>Xbox Series S</h2>
+                    <ul>
+                        <li><span>CPU:</span> 8-ядерний AMD Zen 2, до 3.6 ГГц</li>
+                        <li><span>GPU:</span> AMD RDNA 2, 4 TFLOPS, 20 CU на 1.55 ГГц</li>
+                        <li><span>Память:</span> 10 ГБ GDDR6</li>
+                        <li><span>Накопичувач:</span> 512 ГБ NVMe SSD</li>
+                        <li><span>Роздільна здатність:</span> До 1440p</li>
+                        <li><span>Частота кадрів:</span> До 120 FPS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="scene-container"></div>
+        <div class="game-covers">
+            <div class="cover-item">
+                <img src="assets\covers\AC2.jpg" alt="Game Cover 1" class="cover-image">
+            </div>
+            <div class="cover-item">
+                <img src="assets\covers\elden-ring.jpg" alt="Game Cover 2" class="cover-image">
+            </div>
+            <div class="cover-item">
+                <img src="cover3.jpg" alt="Game Cover 3" class="cover-image">
+            </div>
+            <div class="cover-item">
+                <img src="cover4.jpg" alt="Game Cover 4" class="cover-image">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
