@@ -17,7 +17,7 @@ sceneXbox.add(pinkLightXbox);
 
 let modelXbox;
 const loaderXbox = new THREE.GLTFLoader();
-loaderXbox.load("assets/models/mic.glb", (gltf) => {
+loaderXbox.load("assets/models/xbox.glb", (gltf) => {
     modelXbox = gltf.scene;
     modelXbox.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelXbox);
