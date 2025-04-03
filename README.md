@@ -1,5 +1,5 @@
 # Консоли и Игры
-![image]([https://github.com/user-attachments/assets/e1f4003a-c8eb-4943-b422-ca83bb79509b](https://github.com/Vanea678/console/blob/main/Console.png))! 
+![image](https://github.com/Vanea678/console/blob/main/Console.png)! 
 ## О проекте
 
 Этот сайт,связан с игровыми консолями и видеоиграми. Здесь вы найдёте многое другое для любителей игр на любых платформах — от PlayStation и Xbox.
