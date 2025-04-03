@@ -66,4 +66,4 @@
 ## Контакты
 - **Email**: 20nasa2021@gmail.com
 - **Telegram**: @nasa_20211
-- **Сайт**: [https://console-pi.vercel.app/]
+- **Сайт**: https://console-pi.vercel.app/
