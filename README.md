@@ -19,7 +19,7 @@
 
 1.  Склонируйте репозиторий:
     ```bash
-    git clone [https://github.com/Vanea678/console/]
+    git clone https://github.com/Vanea678/console/
     ```
 2.  Перейдите в директорию проекта:
     ```bash
@@ -27,7 +27,7 @@
     ```
 3.  Установите зависимости:
     ```bash
-    npm install
+    npm install Three.js
     ```
     (или `yarn install`, если вы используете Yarn)
 
