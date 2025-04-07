@@ -18,7 +18,7 @@ scenePS5.add(pinkLightPS5);
 
 let modelPS5;
 const loaderPS5 = new THREE.GLTFLoader();
-loaderPS5.load("assets\models\ps5.glb", (gltf) => {
+loaderPS5.load("assets/models/ps5.glb", (gltf) => {
     modelPS5 = gltf.scene;
     modelPS5.scale.set(2, 2, 2);
     const box = new THREE.Box3().setFromObject(modelPS5);
